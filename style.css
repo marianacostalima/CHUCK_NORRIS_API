@@ -1,0 +1,157 @@
+/* Importar a fonte  do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Definir estilos globais para elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*rgb cor, cria um padrao*/
+:root {
+    --bg-color: rgb(232, 221, 221); /* Cor de fundo */
+    --primary-color: rgb(0, 0, 0); /* Cor principal para texto */
+}
+
+/*rgb cor*/
+
+/*cabeçalho*/
+header {
+    margin-top: 2rem;
+}
+
+header img {
+    /*imagem cabeçalho*/
+    width: 20rem;
+}
+/* Definir estilos para o corpo da página */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-color: var(--bg-color); /* Usar cor de fundo definida */
+}
+
+/* Definir estilos para o contêiner principal */
+.container {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    padding: 20px;
+    gap: 40px;
+}
+
+/*titulo*/
+.title {
+    font-size: 40px;
+    text-align: center;
+    color: var(--primary-color); /* Usar cor principal definida */
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+/* Definir estilos para a dica de clique */
+#clickHint {
+    display: none; /* Ocultar por padrão */
+    text-align: center; /* Centralizar o texto */
+}
+/* Definir estilos para o botão "Get Joke" */
+#getJokeButton {
+    display: none;  /* Ocultar por padrão */
+    margin-top: 10px; /* Adiciona um espaço entre o texto e o botão */
+}
+/* Centralizar horizontalmente o botão dentro da dica de clique */
+#clickHint button {
+    margin: 0 auto; /* Centraliza horizontalmente o botão */
+}
+
+/*INICIO  estilos para os elementos de entrada */
+.inputbox {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 40px;
+}
+
+/*titulo estilos para o rótulo acima dos campos de entrada*/
+.inputbox label {
+    position: relative;
+    top: 0;
+    left: 10px;
+    font-size: 20px;
+    color: var(--primary-color);
+    transform: .5s;
+    cursor: text;
+}
+
+/*transforma a caixinha que recebe a informacao*/
+.inputbox input {
+    position: absolute;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    transition: .5s;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px;
+    color: white /*cor da escrita = branca*/
+}
+
+/* INICIO, animacao que quando vc clica encima do quadrado pra responder ele fica colorido*/
+.inputbox input:focus,
+.inputbox input:valid {
+    height: 100%;
+}
+
+.inputbox input:focus + label,
+.inputbox input:valid + label {
+    top: -40%;
+    left: 0;
+}
+
+/* FIM, animacao que quando vc clica encima do quadrado pra responder ele fica colorido*/
+/*INICIO quadrado que recebe as informacoes do usuario*/
+
+/*INICIO botao*/
+.container button {
+    justify-self: center;
+    width: 300px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 2px;
+    color: white;
+}
+
+
+
+/*FIM botao*/
+
+/*rodapé*/
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: var(--primary-color); /* Usar cor principal definida */
+}
